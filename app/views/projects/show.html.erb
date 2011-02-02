@@ -1,19 +1,17 @@
 <div id="project_detail_tabs" style="float: left; width: 100%; display: none;">
 
   <ul>
-    <li><a href="<%= project_backlog_tab_path(@project) %>" class="backlog_tab"><span><%= spinner %>&nbsp;Backlog / Horizon Planning</span></a>
+    <li><a href="<%= project_backlog_tab_path(@project) %>" class="backlog_tab"><span><%= spinner %>&nbsp;Icebox</span></a>
     </li>
     <li>
       <a href="<%= project_kanban_tab_path(@project) %>" class="kanban_tab"><span><%= spinner %>&nbsp;Project Kanban</span></a>
     </li>
-    <li><a href="<%= project_mytasks_tab_path(@project) %>"><span><%= spinner %>&nbsp;My Tasks</span></a></li>
+    <li><a href="<%= project_mytasks_tab_path(@project) %>"><span><%= spinner %>&nbsp;Trilla</span></a></li>
     <li><a id="members_tab" href="#members"><span>Team Members</span></a></li>
-    <li><a href="project_defects"><span>Defects</span></a></li>
-    <li><a href="project_defects"><span>Active Cards</span></a></li>
-    <li><a href="project_defects"><span>Archived Cards</span></a></li>
   </ul>
 
   <div id="members" class="tab_content">
+    <%= render :partial => 'users/index', :locals => {:users => @project.users} %>
   </div>
 
 </div>
