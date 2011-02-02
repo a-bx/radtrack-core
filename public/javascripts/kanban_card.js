@@ -50,7 +50,7 @@ $(function() {
 			$("#kanban_card_" + card.id).fadeOut();
 		}
 
-		if (confirm('Move this card to the backlog?')) {
+		if (confirm('Move this card to the Icebox?')) {
 			$.post(project_card_move_to_backlog_url(project_id, ElementId.card_id($(this))), {
 				"authenticity_token": window._auth_token
 			},
@@ -118,7 +118,7 @@ $(function() {
 		var card = options.card;
 		var card_display = '<div class="card_header">';
 		if (options.display_go_back) {
-			card_display += '<img src="/images/icons/move_card_to_backlog.png" id="cardpreamble-target-' + card.id + '" class="remove_from_kanban" title="Move Card to Backlog" style="width: 16px; height: 16px;" />';
+			card_display += '<img src="/images/icons/move_card_to_backlog.png" id="cardpreamble-target-' + card.id + '" class="remove_from_kanban" title="Move Card to Icebox" style="width: 16px; height: 16px;" />';
 		}
 		card_display += card_type_image_icon_tag(card)
 		if (options.tasklist_popup) {
