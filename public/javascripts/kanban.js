@@ -30,7 +30,8 @@ $(function() {
                     });
                 }
             };
-
+            
+            ul.append('<li class="kanbanshadow">&nbsp;</li>');
             $(this).append(ul);
 
             $('.kanban_swimlane').sortable(
@@ -38,6 +39,7 @@ $(function() {
                 items: '.kanban_card',
                 connectWith: '.kanban_swimlane',
                 stop: CardDragged,
+                cursor: 'move' 
             });
 
         };
@@ -49,9 +51,14 @@ $(function() {
         function CardDragged(x, ui) {
             var card_id = $(ui.item).attr('id').replace(/[^\d]+/g, '');
             var sibling_cards = $(ui.item).siblings('.kanban_card');
+            var shadow = $(ui.item).siblings('.kanbanshadow');
+
             var position = ui.item.prevAll().length;
             var card_state = ui.item.parent().attr("id");
             var to_cards = $('#' + card_state).sortable("serialize");
+            
+            $(ui.item).siblings('.kanbanshadow').remove();
+                         
             $.post(project_kanban_card_dropped_path(project_id), {
                 'authenticity_token': window._auth_token,
                 'card_id': card_id,
@@ -60,7 +67,8 @@ $(function() {
                 'cards': to_cards
             });
             $(ui.item).fadeIn();
-						updateWipLimitFeedback();
+            updateWipLimitFeedback();
+            $(ui.item).parent().append(shadow);
         };
 
 				function updateWipLimitFeedback() {

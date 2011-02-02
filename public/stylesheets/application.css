@@ -758,20 +758,22 @@ ul.active_tasks li ul li {
 	width: 100%;
 }
 
+    
+
 .kanban_card {
 	float: left;
 	list-style-image:none;
 	list-style-position:outside;
 	list-style-type:none;
-	border: 2px solid #999;
+	border-top: 1px solid #FFF;
+        border-bottom: 1px solid #999;
+        width:100%;
+        /*border: 0px solid #999;
 	font-size: .9em;
-	width: 98%;
-	margin:0 0 2px -2px;
-	padding-right: 6px;
-	-moz-border-radius-bottomleft:4px;
-	-moz-border-radius-bottomright:4px;
-	-moz-border-radius-topleft:4px;
-	-moz-border-radius-topright:4px;
+	width: 100%;
+	margin:-3px -3px 0;
+	padding-right: 5px;
+        padding-bottom: 3px;*/
 }
 
 #backlog {
@@ -815,18 +817,18 @@ ul.active_tasks li ul li {
 
 
 .kanban_card .card_header {
-  padding: 3px;
   float: left; 
-  background-color: #F2BC8F; 
+  background-color: #F4F4F4; 
   width: 100%;
+  font-size: 10px;
 }
 .kanban_card .card_body {
-  padding: 3px;
+  padding: 3px 0 2px;
   float: left; 
-  background-color: #F4D7B6; 
+  background-color: #F4F4F4; 
   width: 100%;
   padding-bottom: 2px;
-  font-size: .9em;
+  font-size: .8em;
 }
 div.kanban_staging_arrow {
   -moz-background-clip:border;
@@ -871,35 +873,46 @@ div.kanban_staging_arrow img {
 	margin-right: 5px;
 	padding-bottom: 2px;
 	background: lightyellow;
-	-moz-border-radius-bottomleft:4px;
-	-moz-border-radius-bottomright:4px;
-	-moz-border-radius-topleft:4px;
-	-moz-border-radius-topright:4px;
+	-moz-border-radius-bottomleft:8px;
+	-moz-border-radius-bottomright:8px;
+	-moz-border-radius-topleft:8px;
+	-moz-border-radius-topright:8px;
 }
 
 .kanban_swimlane {
-	background: #E9ECF1;
-	margin: 2px;
+	background: #D7DADB;
+	margin: 4px;
 	border: 0px solid #CCCCCC;
-	padding: 4px;
+	padding: 0px;
         list-style-type:none;
 	min-height: 710px;
-	-moz-border-radius-bottomleft:4px;
-	-moz-border-radius-bottomright:4px;
-	-moz-border-radius-topleft:4px;
-	-moz-border-radius-topright:4px;        
+	-moz-border-radius-bottomleft:8px;
+	-moz-border-radius-bottomright:8px;
+	-moz-border-radius-topleft:8px;
+	-moz-border-radius-topright:8px;     
+        -moz-box-shadow: 3px 0 3px #BBBBBB;
 }
+.kanban_swimlane .kanbanshadow {
+    background: url("/images/kanban_shadow.png") repeat-x scroll center top transparent;
+    border: 0 none;
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
 .kanban_swimlane .header {
 	font-weight: bold;
-	font-variant: small-caps;
-	text-align: center;
-	margin-left:-4px;
-	margin-right:-4px;
-	margin-top:-4px;
-	margin-bottom: 8px;
-	border: 1px solid white;
+        font-size: .8em;
+	text-transform: uppercase;
+        text-align: center;
+	border: 0px solid white;
 	padding-top: 4px;
-	background: #D9DBF1;
+	background: #106010;
+        color: #EEEEEE;
+        -moz-border-radius-topleft: 8px;
+        -moz-border-radius-topright: 8px;
+        
 }
 .kanban_swimlane .header2 {
   font-style: italic;

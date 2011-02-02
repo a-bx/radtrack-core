@@ -84,7 +84,7 @@ class Project < ActiveRecord::Base
     
     def ensure_initial_card_states
       if self.card_states.empty?
-        self.card_states.create({:name => 'Requested'})
+        self.card_states.create({:name => 'Backlog'})
         self.card_states.create({:name => 'In Progress'})
         self.card_states.create({:name => 'Delivered'})
         self.card_states.create({:name => 'Accepted'})
