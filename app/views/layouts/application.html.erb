@@ -11,13 +11,18 @@
   
   <div id="hd">
   	<div style="width: 100%">
-			<div style="z-index:3">
-		  <%= image_tag('graffle/radtrack_logo_header.png')  if current_user %> 
-    	<div style="float:right">
-        <%= render :partial => 'sessions/login_bar' %>
-    	</div>
-      </div>
-
+	    <div class="top_application" style="z-index:3">
+              <h3>Continuum Time Tracking</h3>
+              <div style="float:right">
+               <%= render :partial => 'sessions/login_bar' %>
+        
+    	      </div>
+             </div>
+             <div class="imagenMedusa">
+               <a href="/">
+                 <img border="0" title="Continuum" alt="Continuum" src="/images/isotipo-continuum.png">
+              </a>
+            </div>
 	<% if current_user %>
 	<div id="project_selector">
 		<% 	 options = {:include_blank => 'All Projects'} %>

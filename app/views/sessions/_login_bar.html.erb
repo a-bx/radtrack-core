@@ -1,8 +1,8 @@
 
 <ul id="login_bar">
 	<% if current_user -%>
+        <%= content_tag(:li, link_to("Dashboard", projects_url)) %>
 
-	<%= content_tag(:li, link_to("Dashboard", projects_url)) %>
 	<%= content_tag(:li, link_to("Project Settings", project_settings_path(@project))) if @project %>
 		
 		<li><%= link_to "Account Settings", edit_user_path(:current) %></li>
@@ -12,7 +12,7 @@
 		<li class="username">&nbsp;<%= current_user.login %> </li>
 		<li><%= link_to "Logout", logout_path %></li>
 	<% else -%>
-	<li><%= link_to "Register for a Free Beta Account", new_user_path %></li>
+	<li><%= link_to "Register Account", new_user_path %></li>
   	
 	  <li><%= link_to "Log in",  login_path,  { :title => "Log in" } %> </li>
 	<% end -%>
