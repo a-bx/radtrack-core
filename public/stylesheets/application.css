@@ -818,14 +818,14 @@ ul.active_tasks li ul li {
 
 .kanban_card .card_header {
   float: left; 
-  background-color: #F4F4F4; 
+  background-color: #E9ECF1; 
   width: 100%;
   font-size: 10px;
 }
 .kanban_card .card_body {
   padding: 3px 0 2px;
   float: left; 
-  background-color: #F4F4F4; 
+  background-color: #E9ECF1; 
   width: 100%;
   padding-bottom: 2px;
   font-size: .8em;
@@ -908,7 +908,7 @@ div.kanban_staging_arrow img {
         text-align: center;
 	border: 0px solid white;
 	padding-top: 4px;
-	background: #106010;
+	background: #0073EA;
         color: #EEEEEE;
         -moz-border-radius-topleft: 8px;
         -moz-border-radius-topright: 8px;
